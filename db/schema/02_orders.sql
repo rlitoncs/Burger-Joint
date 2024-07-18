@@ -7,5 +7,5 @@ CREATE TABLE orders (
   message VARCHAR(255) NOT NULL,
   order_status BOOLEAN NOT NULL,
   confirmation BOOLEAN NOT NULL,
-  customer_id INTEGER REFERENCES customer(id),
+  customer_id INTEGER REFERENCES customer(id)
 );
