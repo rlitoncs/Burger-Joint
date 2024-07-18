@@ -13,6 +13,7 @@ nav {
 
   #about, #menu, #reviews, #contact{
     padding: 0 1.5em; /* top-bottom, left-right*/
+    cursor: pointer;
   }
 
   .nav-items, .nav-brand{
