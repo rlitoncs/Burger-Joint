@@ -11,7 +11,7 @@ nav {
   color: #000000;
   @include align-nav();
 
-  .about, .menu, .reviews, .contract{
+  #about, #menu, #reviews, #contact{
     padding: 0 1.5em; /* top-bottom, left-right*/
   }
 
