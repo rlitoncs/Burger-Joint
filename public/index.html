@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Users</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/nav.css" />
+  <link rel="stylesheet" href="/styles/main-content.css" />
+  <!-- <link rel="stylesheet" href="/styles/main.css" /> -->
+  <link rel="stylesheet" href="/styles/layout.css" />
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/users.js"></script>
+</head>
+
+<body>
+    <!-- Top nav bar (fixed) -->
+    
+    <nav>
+      <div class="nav-items"> 
+        <span id="about">About</span>
+        <span id="menu">Menu</span>
+        <span id="reviews">Reviews</span>
+        <span id="contact">Contact</span>
+      </div>
+
+      <div class="nav-brand">
+        <i class="fa-solid fa-burger"></i>
+        <span class="nav-logo"> BURGER JOINT</span>
+      </div>  
+      
+      <div>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <button class='sign-in' type="submit"> Sign-In </button>
+      </div>
+    </nav>
+    
+    <!-- Page-specific (main) content here -->
+    <main class="container">
+      <h1 class="title"> Ignite Your Cravings </h1>
+      <form id="search" method="" action="">
+        <input name="text" id="search-text" placeholder="Search Item...">
+      </form>
+
+      <h2 class="sub-title"> Our Delightful Pick Ups</h2>
+      <section class="first-row-content">
+        <div>
+          <img class="img-1" src="https://www.shutterstock.com/image-photo/happy-smiling-asian-woman-receives-600nw-2206705019.jpg">
+        </div>
+        
+        <div class="img-1-text-container"> 
+          <h2>Pick Up Has Never Been Easier</h2>
+          <span> Ordering your favorite dishes for pick-up is a breeze. Simply visit our website or use our mobile app to browse our menu, make your selections, and place your order in just a few clicks.  </span>
+        </div>
+      </section>
+
+      <section class="second-row-content">
+        <div class="img-2-text-container">
+          <h2>Contactless and Safe</h2>
+          <span class>  Your safety is our priority. Our contactless pick-up option ensures that you can get your food without any direct contact. Simply pay online and pick up your order from our designated pick-up area. We follow strict hygiene protocols to keep you and our staff safe. </span>
+        </div>
+        <div>
+          <img class="img-2" src="https://image.cnbcfm.com/api/v1/image/105844038-gettyimages-931948226.jpg?v=1554912864&w=750&h=422&vtcrop=y">
+        </div>
+      </section>
+
+
+      <!-- Tweets  -->
+      <!-- <section id="tweets-container"></section> -->
+  
+    </main>
+    
+    <footer>
+      <div class="copyright">        
+        © Copyright 2024
+      </div>
+      <div class="icons">
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-facebook"></i>
+      </div>
+    </footer>
+</body>
+
+</html>
