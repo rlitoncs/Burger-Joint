@@ -1,14 +1,11 @@
 INSERT INTO customers VALUES(
-  "Billie Williams", 7687354762,
-  billiewilliams@gmail.com
+  "Joe", "Smith", 0172222210, joe@joe.ca
 );
 
 INSERT INTO customers VALUES(
-  "Lloyd Finch", 9165414528,
-  lloydfinch@gmail.com
+  "Stan", "Jones", 7783493299, stan@stan.ca
 );
 
 INSERT INTO customers VALUES(
-  "Ebony Bowers", 5492584867,
-  ebonybowers@gmail.com
+"Lionel", "Brown", 5783493299, leo@leo.ca
 );
