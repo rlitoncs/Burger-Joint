@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Users</title>
+  <title>Our Menu</title>
 
   <meta charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
@@ -39,20 +39,26 @@
       <!-- Menu Items  -->
       <section id="menu-container">
         <h2 class="menu-container-title">Our One Of A Kind Burgers</h2>
+          <% for (let item of burgers) { %>
+            <div class="burgers">
+              <div>
+                <img class="img-1" src="https://www.shutterstock.com/image-photo/happy-smiling-asian-woman-receives-600nw-2206705019.jpg">
+              </div>
+              <div class="burger-item">
+              <div class="i name" > <strong> <%= item.name %> </strong> </div>
+              <div class="i"> <%= item.description %> </div>
+              <div class="i"> <strong> <%= item.price %> CAD </strong> </div> 
 
-        <% for (let item of burgers) { %>
-          <div class="burgers">
-            <div>
-              <img class="img-1" src="https://www.shutterstock.com/image-photo/happy-smiling-asian-woman-receives-600nw-2206705019.jpg">
+              <form method="POST" action="/orderSummary">
+                <input type="hidden" name="name" value="<%= item.name %>">
+                <input type="hidden" name="description" value="<%= item.description %>">
+                <input type="hidden" name="price" value="<%= item.price %> ">
+              <button class="add-to-cart-btn" type="submit"> Add To Cart </button>
+              </form>
+              </div>
             </div>
-            <div class="burger-item">
-             <div class="i name" > <strong> <%= item.name %> </strong> </div>
-             <div class="i"> <%= item.description %> </div>
-             <div class="i"> <strong> <%= item.price %> CAD </strong> </div> 
-             <button class="add-to-cart-btn" type="submit"> Add To Cart </button>
-            </div>
-          </div>
-        <% } %>
+          <% } %>
+        </form>
       </section>
 
     </main>
