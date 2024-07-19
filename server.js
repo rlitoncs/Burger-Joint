@@ -32,13 +32,26 @@ const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 
+// My Routes
+
+const menuItemsApiRoutes = require('./routes/menu-api');
+const menuRoutes = require('./routes/menu');
+// const orderSummary = require('./routes/order-summary.js');
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
+
+
+// My Routes  
+app.use('/api/menuItems', menuItemsApiRoutes)
+app.use('/menu', menuRoutes);
+// app.use('/orderSummary', orderSummary);
 // Note: mount other resources here, using the same pattern above
+
 
 // Home page
 // Warning: avoid creating more routes in this file!
