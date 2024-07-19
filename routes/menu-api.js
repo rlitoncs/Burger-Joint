@@ -4,6 +4,7 @@
  *   these routes are mounted onto /api/users
  * See: https://expressjs.com/en/guide/using-middleware.html#middleware.router
  */
+/* Display our data in json */
 
 const express = require('express');
 const router  = express.Router();
