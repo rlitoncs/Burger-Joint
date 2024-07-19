@@ -24,4 +24,21 @@ router.get('/', (req, res) => {
     });
 });
 
+// For searching menuItems
+router.post('/', (req, res) => {
+  const item = req.body.text;
+  userQueries.getSpecificItem(item)
+    .then(burgerItems => {
+      templateVars = {
+        burgers: burgerItems
+      }
+      res.render('menu', templateVars); //array of objects
+    })
+    .catch(err => {
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+});
+
 module.exports = router;

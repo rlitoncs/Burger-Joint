@@ -39,10 +39,17 @@
     }
   }
 
-  .menu-container-title{
+  .menu-container-title, .search-error-title{
     margin-bottom: 100px;
     font-family: "Inter", sans-serif;
     font-weight: 300;
     font-size: 2.5em;
+  }
+  .search-error-title{
+    width: 800px;
+    text-align: center;
+  }
+  .another-item{
+    color: limegreen;
   }
 }

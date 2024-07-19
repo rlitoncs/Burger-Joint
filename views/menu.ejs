@@ -39,6 +39,10 @@
       <!-- Menu Items  -->
       <section id="menu-container">
         <h2 class="menu-container-title">Our One Of A Kind Burgers</h2>
+         <% if (burgers.length === 0) { %>
+            <h2>Hmm...</h2>
+            <h2 class="search-error-title"> Seems look like we don't have what you're looking for! <span class="another-item">Try looking for another item!<span></span></h2>
+          <% } %>
           <% for (let item of burgers) { %>
             <div class="burgers">
               <div>
