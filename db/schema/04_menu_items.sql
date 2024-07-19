@@ -4,5 +4,5 @@ CREATE TABLE menu_items (
   image_url VARCHAR(255),
   name VARCHAR(80) NOT NULL,
   description VARCHAR(255) NOT NULL,
-  price INTEGER NOT NULL
+  price DECIMAL(10,2) NOT NULL
 );
