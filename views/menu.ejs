@@ -29,9 +29,6 @@
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/users.js"></script>
 
-  <!-- Menu Item -->
-  <script src="/scripts/menu-items.js"></script>
-
 </head>
 
 <body>
@@ -42,20 +39,25 @@
       <!-- Menu Items  -->
       <section id="menu-container">
         <h2 class="menu-container-title">Our One Of A Kind Burgers</h2>
+
+        <% for (let item of burgers) { %>
+          <div class="burgers">
+            <div>
+              <img class="img-1" src="https://www.shutterstock.com/image-photo/happy-smiling-asian-woman-receives-600nw-2206705019.jpg">
+            </div>
+            <div class="burger-item">
+             <div class="i name" > <strong> <%= item.name %> </strong> </div>
+             <div class="i"> <%= item.description %> </div>
+             <div class="i"> <strong> <%= item.price %> CAD </strong> </div> 
+             <button class="add-to-cart-btn" type="submit"> Add To Cart </button>
+            </div>
+          </div>
+        <% } %>
       </section>
-  
+
     </main>
     
-    <footer>
-      <div class="copyright">        
-        © Copyright 2024
-      </div>
-      <div class="icons">
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-facebook"></i>
-      </div>
-    </footer>
+    <%- include('partials/_footer') %>
 </body>
 
 </html>
