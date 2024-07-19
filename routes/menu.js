@@ -7,10 +7,10 @@
 
 const express = require('express');
 const router  = express.Router();
-const userQueries = require('../db/queries/users');
+const userQueries = require('../db/queries/menu');
 
 router.get('/', (req, res) => {
-  userQueries.getUsers()
+  userQueries.getMenuItems()
     .then(burgerItems => {
       templateVars = {
         burgers: burgerItems
