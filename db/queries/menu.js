@@ -8,7 +8,7 @@ const getMenuItems = () => {
 };
 
 const getSpecificItem = (item) => {
-  return db.query(`SELECT * FROM menu_items WHERE name LIKE '%${item}%' `)
+  return db.query(`SELECT * FROM menu_items WHERE UPPER(name) LIKE UPPER('%${item}%')`)
     .then(data => {
       console.log(data);
       return data.rows;
