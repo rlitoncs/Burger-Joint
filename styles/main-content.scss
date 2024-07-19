@@ -1,30 +1,19 @@
 @mixin align-content{
   display: flex;
   justify-content: center;
-  // align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container #home-container{
   display:flex;
   align-items: center;
   flex-direction: column;
-
-  .title{
-    position:absolute;
-    top: 150px;
-    font-family: "Inter", sans-serif;
-    font-weight: 300;
-  }
   
-  #search-text{
-    width: 50vw;
-    padding: 10px;
-    border-radius: 10px;
-    border: 1px solid black;
-    position: relative;
-    bottom: 300px;
-  }
-
   .sub-title{
     font-family: "Inter", sans-serif;
     font-size: 2.5em;
@@ -80,5 +69,9 @@ footer {
   .icons i {
     margin: 0 10px 0 10px;
   }
-  
+
+}
+
+.menu-container-title {
+  display: none;
 }
