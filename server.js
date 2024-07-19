@@ -35,6 +35,7 @@ const usersRoutes = require('./routes/users');
 // My Routes
 const menuItemsApiRoutes = require('./routes/menu-api');
 const menuRoutes = require('./routes/menu');
+const orderSummaryRoutes = require('./routes/orderSummary');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -47,6 +48,7 @@ app.use('/users', usersRoutes);
 app.use('/api/menuItems', menuItemsApiRoutes) // this will show our menuItems in JSON
 app.use('/menu', menuRoutes); // when i click on /menu go to this route
 // Note: mount other resources here, using the same pattern above
+app.use('/orderSummary', orderSummaryRoutes);
 
 
 // Home page

@@ -1,0 +1,15 @@
+#order-container{
+  .i{
+    margin-top: 20px;
+  }
+  .place-order-btn{
+    padding: 20px;
+    background-color: rgb(25, 25, 25);
+    color: white;
+    width: 100%;
+    border-radius: 10px;  
+  }
+  .place-order-btn:hover{
+    background-color: black;
+  }
+}
