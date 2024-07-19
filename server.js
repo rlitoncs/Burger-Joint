@@ -48,6 +48,9 @@ app.get('/', (req, res) => {
   res.render('index');
 });
 
+app.get('/order/:id/order_items',(req, res) => {
+  res.render('order_items')
+})
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
