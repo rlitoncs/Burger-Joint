@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Orders</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
+  <link rel="stylesheet" href="/styles/layout.css" />
+
+  <!-- App JS -->
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/users.js"></script>
+
+</head>
+
+<body>
+  <!-- Top Nav Bar -->
+    <nav>
+      <span class="title">Burger Joint</span>
+      <div class="about">about</div>
+      <div class="menu">menu</div>
+      <div class="reviews">reviews</div>
+      <div class="contact">contact</div>
+      <div class="sign_in">signed in as: Chef</div>
+    </nav>
+
+  <!-- Header -->
+    <header class="header">
+      <button type="button" class="btn btn-primary position-relative">
+        Profile
+        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+          <span class="visually-hidden">Orders</span>
+        </span>
+      </button>
+      <button type="button" class="btn btn-secondary">Fulfilled</button>
+    </header>
+
+    <main class="container">
+        <form class="search_bar">
+          <div>
+            <textarea
+              name="text"
+              class="text-line"
+              id="search"
+              type="text"
+              placeholder="Search"
+            ></textarea>
+          </div>
+          <button type="button" class="btn btn-outline-dark">Dark</button>
+          <div>
+            <button type="button" class="btn btn-outline-success">Accept</button>
+            <button type="button" class="btn btn-outline-danger">Decline</button>
+          </div>
+        </form>
+      <section id="footer"></section>
+    </main>
+
+
+</body>
+
+</html>
