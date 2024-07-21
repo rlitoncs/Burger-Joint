@@ -10,7 +10,7 @@ const router  = express.Router();
 const menuQueries = require('../db/queries/menu');
 
 router.get('/', (req, res) => {
-  userQueries.getMenuItems()
+  menuQueries.getMenuItems()
     .then(burgerItems => {
       templateVars = {
         burgers: burgerItems
@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
 // For searching menuItems
 router.post('/', (req, res) => {
   const item = req.body.text;
-  userQueries.getSpecificItem(item)
+  menuQueries.getSpecificItem(item)
     .then(burgerItems => {
       templateVars = {
         burgers: burgerItems
