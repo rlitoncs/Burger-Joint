@@ -7,7 +7,7 @@
 
 const express = require('express');
 const router  = express.Router();
-const userQueries = require('../db/queries/menu');
+const menuQueries = require('../db/queries/menu');
 
 router.get('/', (req, res) => {
   userQueries.getMenuItems()
