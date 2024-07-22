@@ -37,6 +37,7 @@ const menuItemsApiRoutes = require('./routes/menu-api');
 const menuRoutes = require('./routes/menu');
 const orderSummaryRoutes = require('./routes/orderSummary');
 const ordersRoutes = require('./routes/orders');
+const loginRoutes = require('./routes/login')
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -51,6 +52,7 @@ app.use('/menu', menuRoutes); // when i click on /menu go to this route
 // Note: mount other resources here, using the same pattern above
 app.use('/orderSummary', orderSummaryRoutes);
 app.use('/orders', ordersRoutes);
+app.use('/login', loginRoutes);
 
 
 // Home page
@@ -58,6 +60,7 @@ app.use('/orders', ordersRoutes);
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
+  console.log(req.body.email);
   res.render('index');
 });
 
