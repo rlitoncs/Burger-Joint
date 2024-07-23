@@ -8,6 +8,7 @@
 const express = require('express');
 const router  = express.Router();
 const orderQueries = require('../db/queries/orderSummary');
+const sendSMS = require('../db/queries/sendSMS');
 
 const orderCart = []; //use as tempalte vars
 
@@ -44,9 +45,15 @@ router.post('/order-submitted', (req, res) => {
   const userEmailID = req.session.user_email_id;
   const customerID = 3; // hard-coded customer id
 
+  const templateVars = {
+    user: userEmailID
+  }
+
+  //Add new order to orders table
   for (let item of orderCart) {
     orderQueries.addOrder('now()', Number(item.price) * Number(item.quantity), '12:30:00', 'Your order has been placed', 'Order Received', true, customerID);
 
+    //Add new order to order_items table
     orderQueries.getSpecificOrder(customerID)
     .then(orderID => {
       console.log('order ID from getSpecificOrder()', orderID.reverse()[0], orderID.reverse()[0].id)
@@ -54,9 +61,11 @@ router.post('/order-submitted', (req, res) => {
     });
   }
 
-  const templateVars = {
-    user: userEmailID
-  }
+  //Restaurant receives message from Customer
+  sendSMS('Burger Joint: Chef you have received a new order!');
+
+  //Customer receives message from Restaurant
+  sendSMS('Thanks for ordering at Burger Joint! Your order has been successfully submitted. We\'ll notify you when your order is ready! ');
 
   res.render('orderComplete', templateVars);
 });
