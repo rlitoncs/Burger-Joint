@@ -43,7 +43,7 @@ const usersRoutes = require('./routes/users');
 const menuItemsApiRoutes = require('./routes/menu-api');
 const menuRoutes = require('./routes/menu');
 const orderSummaryRoutes = require('./routes/orderSummary');
-const ordersRoutes = require('./routes/orders');
+// const ordersRoutes = require('./routes/orders');
 const loginRoutes = require('./routes/login')
 const logoutRoutes = require('./routes/logout')
 
@@ -59,7 +59,7 @@ app.use('/api/menuItems', menuItemsApiRoutes) // this will show our menuItems in
 app.use('/menu', menuRoutes);
 // Note: mount other resources here, using the same pattern above
 app.use('/orderSummary', orderSummaryRoutes);
-app.use('/orders', ordersRoutes);
+// app.use('/orders', ordersRoutes);
 app.use('/login', loginRoutes);
 app.use('/logout', logoutRoutes);
 
