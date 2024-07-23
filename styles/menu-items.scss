@@ -1,0 +1,56 @@
+#menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .burgers{
+    display: flex;
+    margin-bottom: 20px;
+    
+    .burger-img{
+      width: 400px;
+      height: 400px;
+      border-radius: 10px;
+      margin-right: 150px;
+    }
+  }
+  .burger-item{
+    width: 800px;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+
+    .i.name{
+      font-size: 1.2em;
+    }
+
+    .i{
+      padding: 10px;
+    }
+    
+    .add-to-cart-btn{
+      padding: 10px;
+      margin-left: 10px;
+      border-radius: 10px;
+      background-color: #BEE6F2;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+    .add-to-cart-btn:hover{
+      background-color: #add6e3;
+    }
+  }
+
+  .menu-container-title, .search-error-title{
+    margin-bottom: 100px;
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+    font-size: 2.5em;
+  }
+  .search-error-title{
+    width: 800px;
+    text-align: center;
+  }
+  .another-item{
+    color: limegreen;
+  }
+}

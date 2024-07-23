@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title> 🍔 Burger Joint</title>
+  <title>Order Summary</title>
 
   <meta charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="/styles/nav.css" />
   <link rel="stylesheet" href="/styles/main-content.css" />
   <link rel="stylesheet" href="/styles/menu-items.css" />
+  <link rel="stylesheet" href="/styles/order-summary.css" />
   <!-- <link rel="stylesheet" href="/styles/main.css" /> -->
   <link rel="stylesheet" href="/styles/layout.css" />
 
@@ -33,33 +34,14 @@
 
 <body>
     <%- include('partials/_header') %>
-    
+
     <!-- Page-specific (main) content here -->
     <main class="container">
-
-      <section id="home-container">
-        <h2 class="sub-title"> Our Delightful Pick Ups</h2>
-        <div class="first-row-content">
-          <div>
-            <img class="img-1" src="https://www.shutterstock.com/image-photo/happy-smiling-asian-woman-receives-600nw-2206705019.jpg">
-          </div>
-          
-          <div class="img-1-text-container"> 
-            <h2>Pick Up Has Never Been Easier</h2>
-            <span> Ordering your favorite dishes for pick-up is a breeze. Simply visit our website or use our mobile app to browse our menu, make your selections, and place your order in just a few clicks.  </span>
-          </div>
-        </div>
-
-        <div class="second-row-content">
-          <div class="img-2-text-container">
-            <h2>Contactless and Safe</h2>
-            <span class>  Your safety is our priority. Our contactless pick-up option ensures that you can get your food without any direct contact. Simply pay online and pick up your order from our designated pick-up area. We follow strict hygiene protocols to keep you and our staff safe. </span>
-          </div>
-          <div>
-            <img class="img-2" src="https://image.cnbcfm.com/api/v1/image/105844038-gettyimages-931948226.jpg?v=1554912864&w=750&h=422&vtcrop=y">
-          </div>
-        </div>
+      <!-- Menu Items  -->
+      <section id="order-container">
+       <h2>Order is Completed</h2>
       </section>
+
     </main>
     
     <%- include('partials/_footer') %>

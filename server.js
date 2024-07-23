@@ -5,8 +5,9 @@ require('dotenv').config();
 const sassMiddleware = require('./lib/sass-middleware');
 const express = require('express');
 const morgan = require('morgan');
+const cookieSession = require('cookie-session');
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 8085;
 const app = express();
 
 app.set('view engine', 'ejs');
@@ -26,26 +27,54 @@ app.use(
 );
 app.use(express.static('public'));
 
+app.use(cookieSession({
+  name: 'burgerJointSession',
+  keys:['key'],
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}))
+
 // Separated Routes for each Resource
 // Note: Feel free to replace the example routes below with your own
 const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 
+//Routes
+const menuItemsApiRoutes = require('./routes/menu-api');
+const menuRoutes = require('./routes/menu');
+const orderSummaryRoutes = require('./routes/orderSummary');
+const loginRoutes = require('./routes/login')
+const logoutRoutes = require('./routes/logout')
+
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 // Note: Endpoints that return data (eg. JSON) usually start with `/api`
+//Example Routes
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
+
+//Routes  
+app.use('/api/menuItems', menuItemsApiRoutes) // this will show our menuItems in JSON
+app.use('/menu', menuRoutes);
 // Note: mount other resources here, using the same pattern above
+app.use('/orderSummary', orderSummaryRoutes);
+app.use('/login', loginRoutes);
+app.use('/logout', logoutRoutes);
+
 
 // Home page
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
-  res.render('index');
+  const userEmailID = req.session.user_email_id;
+  console.log(userEmailID);
+
+  const templateVars = {
+    user: userEmailID
+  }
+  res.render('index', templateVars);
 });
 
 app.listen(PORT, () => {

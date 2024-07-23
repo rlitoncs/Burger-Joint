@@ -1,0 +1,32 @@
+<header>
+  <!-- Top nav bar (fixed) -->
+  <nav class="nav-login">
+    <section class="nav-content" > 
+      <div class="nav-items"> 
+        <a id="about" href="/about">About</a>
+        <a id="menu" href="/menu">Menu</a>
+        <a id="reviews" href="/reviews">Reviews</a>
+        <a id="contact" href="/contact">Contact</a>
+      </div>
+
+      <div class="nav-brand">
+        <a class="nav-logo" href="/"><i class="fa-solid fa-burger"></i></a>
+        <a class="nav-logo" href="/">BURGER JOINT </a>
+      </div>  
+    
+    <div>
+      <% if (user) { %>
+        <form method="POST" action="/logout">
+          <a class="shopping-cart" href="/orderSummary"><i class="fa-solid fa-cart-shopping"></i></a>
+            <span>Logged in as: <% user.email %></span>
+            <button class='sign-in' type="submit"> Logout </button>
+        </form>
+        <%} else { %>
+          <a href="/login">
+            <button class='sign-in' type="submit"> Login </button>
+          </a>
+        <% } %>
+  </section>
+
+</nav>
+</header>
