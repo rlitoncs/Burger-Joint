@@ -69,7 +69,13 @@ app.use('/logout', logoutRoutes);
 // Separate them into separate routes files (see above).
 
 app.get('/', (req, res) => {
-  res.render('index');
+  const userEmailID = req.session.user_email_id;
+  console.log(userEmailID);
+
+  const templateVars = {
+    user: userEmailID
+  }
+  res.render('index', templateVars);
 });
 
 app.listen(PORT, () => {

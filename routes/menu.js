@@ -10,10 +10,12 @@ const router  = express.Router();
 const menuQueries = require('../db/queries/menu');
 
 router.get('/', (req, res) => {
+  const userEmailID = req.session.user_email_id;
   menuQueries.getMenuItems()
     .then(burgerItems => {
       templateVars = {
-        burgers: burgerItems
+        burgers: burgerItems,
+        user: userEmailID
       }
       res.render('menu', templateVars); //array of objects
     })
@@ -26,11 +28,13 @@ router.get('/', (req, res) => {
 
 // For searching menuItems
 router.post('/', (req, res) => {
+  const userEmailID = req.session.user_email_id;
   const item = req.body.text;
   menuQueries.getSpecificItem(item)
     .then(burgerItems => {
       templateVars = {
-        burgers: burgerItems
+        burgers: burgerItems,
+        user: userEmailID
       }
       res.render('menu', templateVars); //array of objects
     })

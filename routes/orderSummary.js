@@ -13,8 +13,10 @@ const orderCart = []; //use as tempalte vars
 
 // GET /orderSummary
 router.get('/', (req, res) => {
+  const userEmailID = req.session.user_email_id;
   templateVars = {
-    orderSummary: orderCart
+    orderSummary: orderCart,
+    user: userEmailID
   }
   res.render('orderSummary', templateVars);
 });
@@ -39,7 +41,8 @@ router.post('/', (req, res) => {
 
 // POST /orderSummary/order-submitted
 router.post('/order-submitted', (req, res) => {
-  const customerID = 3; // we would get the id from the cookie session
+  const userEmailID = req.session.user_email_id;
+  const customerID = 3; // hard-coded customer id
 
   for (let item of orderCart) {
     orderQueries.addOrder('now()', Number(item.price) * Number(item.quantity), '12:30:00', 'Your order has been placed', 'Order Received', true, customerID);
@@ -51,7 +54,11 @@ router.post('/order-submitted', (req, res) => {
     });
   }
 
-  res.render('orderComplete');
+  const templateVars = {
+    user: userEmailID
+  }
+
+  res.render('orderComplete', templateVars);
 });
 
 
