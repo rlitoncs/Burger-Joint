@@ -30,80 +30,31 @@
         <h2>Order Summary</h2>
         <h2>cart icon</h2>
       </div>
-      <article class="order-item">
-        <img src="https://th.bing.com/th/id/R.44d10945c0a134e5d18b403a2d4eca7c?rik=AO60awUclc7mXw&riu=http%3a%2f%2fassets.epicurious.com%2fphotos%2f57c5c6d9cf9e9ad43de2d96e%2fmaster%2fpass%2fthe-ultimate-hamburger.jpg&ehk=ovkmWw5FEuB86jZ%2fN9Gt9ATrG2oovgVkW0CHny4no8E%3d&risl=&pid=ImgRaw&r=0">
-        <h3>
-          $7
-        </h3>
-        <h3>
-          description column - amburger
-        </h3>
-        <div class="quantity-control">
-          <button>-</button>
-          <span>0</span>
-          <button>+</button>
-      </div>
-      <h3>
-        🗑️
-      </h3>
-      </article>
-      <article class="order-item">
-        <img src="https://th.bing.com/th/id/R.44d10945c0a134e5d18b403a2d4eca7c?rik=AO60awUclc7mXw&riu=http%3a%2f%2fassets.epicurious.com%2fphotos%2f57c5c6d9cf9e9ad43de2d96e%2fmaster%2fpass%2fthe-ultimate-hamburger.jpg&ehk=ovkmWw5FEuB86jZ%2fN9Gt9ATrG2oovgVkW0CHny4no8E%3d&risl=&pid=ImgRaw&r=0">
-        <h3>
-          $7
-        </h3>
-        <h3>
-          description column - amburger
-        </h3>
-        <div class="quantity-control">
-          <button>-</button>
-          <span>0</span>
-          <button>+</button>
-      </div>
-      <h3>
-        🗑️
-      </h3>
-      </article>
-      <article class="order-item">
-        <img src="https://th.bing.com/th/id/R.44d10945c0a134e5d18b403a2d4eca7c?rik=AO60awUclc7mXw&riu=http%3a%2f%2fassets.epicurious.com%2fphotos%2f57c5c6d9cf9e9ad43de2d96e%2fmaster%2fpass%2fthe-ultimate-hamburger.jpg&ehk=ovkmWw5FEuB86jZ%2fN9Gt9ATrG2oovgVkW0CHny4no8E%3d&risl=&pid=ImgRaw&r=0">
-        <h3>
-          $7
-        </h3>
-        <h3>
-          description column - amburger
-        </h3>
-        <div class="quantity-control">
-          <button>-</button>
-          <span>0</span>
-          <button>+</button>
-      </div>
-      <h3>
-        🗑️
-      </h3>
-      </article>
-      <article class="order-item">
-        <img src="https://th.bing.com/th/id/R.44d10945c0a134e5d18b403a2d4eca7c?rik=AO60awUclc7mXw&riu=http%3a%2f%2fassets.epicurious.com%2fphotos%2f57c5c6d9cf9e9ad43de2d96e%2fmaster%2fpass%2fthe-ultimate-hamburger.jpg&ehk=ovkmWw5FEuB86jZ%2fN9Gt9ATrG2oovgVkW0CHny4no8E%3d&risl=&pid=ImgRaw&r=0">
-        <h3>
-          $7
-        </h3>
-        <h3>
-          description column - amburger
-        </h3>
-        <div class="quantity-control">
-          <button>-</button>
-          <span>0</span>
-          <button>+</button>
-      </div>
-      <h3>
-        🗑️
-      </h3>
-      </article>
+
+
+      <% for (let item of orderItems) { %>
+        <article class="order-item">         
+         <img src="<%=item.image_url%>">
+          <h3>
+            $<%= item.price %>
+          </h3>
+          <h3>
+            <%= item.description %>
+          </h3>
+          <div class="quantity-control">
+            
+            <span><%=item.item_quantity%></span>
+          </div>        
+        </article>
+     <% } %>
+
+      
       <div class="total-box">
         <h3>
           TOTAL :CA 
         </h3>
         <h3>$</h3>
-        <h3>28</h3>
+        <h3><%=totalPrice%></h3>
       </div>
       
     </section>

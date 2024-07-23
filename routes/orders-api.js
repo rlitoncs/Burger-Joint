@@ -22,8 +22,24 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id/order_items',(req, res) => {
-
-  res.render('order_items')
+  const id = req.params.id
+  orderQueries.getOrderItems(id)
+    .then(orderItems => {
+      let totalPrice = 0;
+      for (let item of orderItems) {
+        totalPrice += item.price;
+      }
+      console.log('orderItems:', orderItems)
+      res.render('order_items',{orderItems,totalPrice})
+     // res.json({ orderItems });
+    })
+    .catch(err => {
+      console.log('error', err);
+      res
+        .status(500)
+        .json({ error: err.message });
+    });
+  
 })
 
 module.exports = router;

@@ -7,4 +7,10 @@ const getOrders = () => {
     });
 };
 
-module.exports = { getOrders };
+const getOrderItems = (id) => {
+  return db.query('SELECT * FROM order_items JOIN menu_items ON menu_items.id = order_items.menu_item_id where orders_id = $1;',[id])
+    .then(data => {
+      return data.rows;
+    });
+};
+module.exports = { getOrders, getOrderItems};
