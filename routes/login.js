@@ -26,7 +26,11 @@ router.post('/', (req, res) => {
   req.session.user_email_id = userEmailID;
 
   console.log(req.session.user_email_id);
-  res.redirect("/");
+  if ( userEmailID  === 'chef@burgerjoint.ca') {
+    res.redirect('/orders');
+  } else {
+    res.redirect("/");
+  }
 
 })
 

@@ -18,7 +18,7 @@
       <% if (user) { %>
         <form method="POST" action="/logout">
           <a class="shopping-cart" href="/orderSummary"><i class="fa-solid fa-cart-shopping"></i></a>
-            <span>Logged in as: <% user.email %></span>
+            <span>Logged in as: <%= user %></span>
             <button class='sign-in' type="submit"> Logout </button>
         </form>
         <%} else { %>
