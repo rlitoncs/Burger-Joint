@@ -5,25 +5,29 @@ const router  = express.Router();
 
 // GET /login
 router.get('/', (req, res) => {
-  const userID = req.session.user_id;
+  const userEmailID = req.session.user_email_id;
 
   const templateVars = {
-    user: userID  
-  };
+    user: userEmailID
+  }
+
+  if(userEmailID){
+    res.redirect('/');
+  } else {
     res.render("login", templateVars);
+  }
+
 }); 
 
 
 // POST /login
 router.post('/', (req, res) => {
-  const userEmail = req.body.email;
-  req.session.user_id = userEmail;
+  const userEmailID = req.body.email;
+  req.session.user_email_id = userEmailID;
 
-  if(userEmail !== 'owner@gmail.com'){
-    res.redirect('/');
-  } else {
-    // redirects to owners page
-  }
+  console.log(req.session.user_email_id);
+  res.redirect("/");
+
 })
 
 

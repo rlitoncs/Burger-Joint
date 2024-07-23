@@ -15,9 +15,17 @@
       </div>  
     
     <div>
-      <a class="shopping-cart" href="/orderSummary"><i class="fa-solid fa-cart-shopping"></i></a>
-      <button class='sign-in' type="submit"> Login </button>
-    </div>
+      <% if (user) { %>
+        <form method="POST" action="/logout">
+          <a class="shopping-cart" href="/orderSummary"><i class="fa-solid fa-cart-shopping"></i></a>
+            <span>Logged in as: <% user.email %></span>
+            <button class='sign-in' type="submit"> Logout </button>
+        </form>
+        <%} else { %>
+          <a href="/login">
+            <button class='sign-in' type="submit"> Login </button>
+          </a>
+        <% } %>
   </section>
 
 </nav>

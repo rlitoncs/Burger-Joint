@@ -15,10 +15,18 @@
       </div>  
     
     <div>
-      <form method="GET" action="/login">
+      <% if (user) { %>
+      <form method="POST" action="/logout">
         <a class="shopping-cart" href="/orderSummary"><i class="fa-solid fa-cart-shopping"></i></a>
-          <button class='sign-in' type="submit"> Login </button>
+          <span>Logged in as: <%= user %></span>
+          <button class='sign-in' type="submit"> Logout </button>
       </form>
+      <%} else { %>
+        <a class="shopping-cart" href="/orderSummary"><i class="fa-solid fa-cart-shopping"></i></a>
+        <a href="/login">
+          <button class='sign-in' type="submit"> Login </button>
+        </a>
+      <% } %>
     </div>
   </section>
 
