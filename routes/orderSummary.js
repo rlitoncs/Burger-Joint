@@ -61,11 +61,11 @@ router.post('/order-submitted', (req, res) => {
     });
   }
 
+  //Customer receives message from Restaurant
+  sendSMS('Thanks for ordering at Burger Joint! Your order has been successfully submitted and received. We\'ll notify you when your order is ready! ');
+
   //Restaurant receives message from Customer
   sendSMS('Burger Joint: Chef you have received a new order!');
-
-  //Customer receives message from Restaurant
-  sendSMS('Thanks for ordering at Burger Joint! Your order has been successfully submitted. We\'ll notify you when your order is ready! ');
 
   res.render('orderComplete', templateVars);
 });
