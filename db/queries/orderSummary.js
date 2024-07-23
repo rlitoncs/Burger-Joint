@@ -1,13 +1,5 @@
 const db = require('../connection');
 
-//Retrieve all customer orders
-const getOrders = () => {
-  return db.query(`SELECT * from orders;`)
-    .then(data => {
-      return data.rows;
-  })
-}
-
 //Add the customer's order to orders table
 const addOrder = (created_at, total_amount, pick_up_time, message, order_status, confirmation, customer_id) => {
   return db.query(`
