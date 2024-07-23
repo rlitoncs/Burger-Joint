@@ -13,33 +13,31 @@
   <link rel="stylesheet" href="/vendor/border-box.css" />
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/orders/nav.scss" />
+  <link rel="stylesheet" href="/styles/orders/header.scss" />
+  <link rel="stylesheet" href="/styles/orders/main.scss" />
+  <link rel="stylesheet" href="/styles/orders/footer.scss" />
 
   <!-- App JS -->
-  <script src="public/vendor/jquery-3.0.0.js"></script>
-  <script src="/routes/users-api.js"></script>
-  <script defer src="/public/scripts/users.js"></script>
+  <script src="/public/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/public/scripts/orders_page.js"></script>
 
 </head>
 
 <body>
   <!-- Top Nav Bar -->
     <nav>
+      <div class="pages">about</div>
+      <div class="pages">menu</div>
+      <div class="pages">reviews</div>
+      <div class="pages">contact</div>
       <span class="title">Burger Joint</span>
-      <div class="about">about</div>
-      <div class="menu">menu</div>
-      <div class="reviews">reviews</div>
-      <div class="contact">contact</div>
       <div class="sign_in">signed in as: Chef</div>
     </nav>
 
   <!-- Header -->
     <header class="header">
-      <button type="button" class="btn btn-primary position-relative">
-        Profile
-        <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-          <span class="visually-hidden">Orders</span>
-        </span>
-      </button>
+      <button type="button" class="btn btn-primary position-relative">Orders</button>
       <button type="button" class="btn btn-secondary">Fulfilled</button>
     </header>
 
@@ -54,11 +52,17 @@
               placeholder="Search"
             ></textarea>
           </div>
-          <button type="button" class="btn btn-outline-dark">Dark</button>
+
+            <!-- <h1>Order Details</h1>
+             <p>Order ID: <%= order.id %></p>
+             <p>Order Name: <%= order.name %></p>
+             <p>Order Details: <%= order.details %></p> -->
+
           <div>
             <button type="button" class="btn btn-outline-success">Accept</button>
             <button type="button" class="btn btn-outline-danger">Decline</button>
           </div>
+
         </form>
       <section id="footer"></section>
     </main>

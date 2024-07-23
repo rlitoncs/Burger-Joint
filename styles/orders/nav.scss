@@ -1,0 +1,32 @@
+/* nav bar --> about, menu, reviews, contact, titleabout, singed in as*/
+
+nav {
+  height: 100px;
+  width: 100%;
+  padding: 1.5em;
+  color: #ffffff;
+  position: fixed;
+  display: flex;
+  align-items: center;
+}
+
+.pages {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  position: fixed;
+  align-items: row;
+}
+
+/* .title {
+  display: flex;
+  color: #000000;
+  position: fixed;
+  justify-content: center
+} */
+/*
+.sign_in {
+  display: flex;
+  justify-content: flex-end;
+  color: #000000;
+} */
