@@ -7,7 +7,7 @@
 
 const express = require('express');
 const router  = express.Router();
-const orderQueries = require('../db/queries/orders');
+const orderQueries = require('../db/queries/orderSummary');
 
 const orderCart = []; //use as tempalte vars
 
