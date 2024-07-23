@@ -56,7 +56,7 @@ app.use('/users', usersRoutes);
 
 // My Routes  
 app.use('/api/menuItems', menuItemsApiRoutes) // this will show our menuItems in JSON
-app.use('/menu', menuRoutes); // when i click on /menu go to this route
+app.use('/menu', menuRoutes);
 // Note: mount other resources here, using the same pattern above
 app.use('/orderSummary', orderSummaryRoutes);
 app.use('/orders', ordersRoutes);
