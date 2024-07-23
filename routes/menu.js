@@ -9,6 +9,7 @@ const express = require('express');
 const router  = express.Router();
 const menuQueries = require('../db/queries/menu');
 
+// GET /menu
 router.get('/', (req, res) => {
   const userEmailID = req.session.user_email_id;
   menuQueries.getMenuItems()
@@ -26,6 +27,8 @@ router.get('/', (req, res) => {
     });
 });
 
+
+// POST /menu
 // For searching menuItems
 router.post('/', (req, res) => {
   const userEmailID = req.session.user_email_id;
