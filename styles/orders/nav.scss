@@ -1,32 +1,71 @@
-/* nav bar --> about, menu, reviews, contact, titleabout, singed in as*/
+/* nav bar --> done by Ralph*/
 
-nav {
-  height: 100px;
+
+@mixin align-nav{
+  display:flex;
+  justify-content: space-between;
+}
+
+nav{
+  height: 600px;
   width: 100%;
-  padding: 1.5em;
-  color: #ffffff;
-  position: fixed;
+  background-color: #F2BEBE;
+  color: #000000;
+}
+
+a{
+  text-decoration: none;
+  color: black;
+}
+
+.nav-content {
+  @include align-nav();
+
+  #about, #menu, #reviews, #contact{
+    padding: 0 1.5em; /* top-bottom, left-right*/
+  }
+
+  .nav-items, .nav-brand{
+    margin: 1.5em 0; /* top-bottom, left-right*/
+  }
+
+  .nav-brand {
+    margin-top: 30px;
+    margin-right: 400px;
+    font-size: 1.2em;
+  }
+
+  .sign-in, .sign-out {
+    margin: 10px 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+    background-color: transparent;
+    font-size: 0.7em;
+    width: 100px;
+  }
+  .sign-in:hover{
+    background-color: #BEE6F2;
+    cursor: pointer;
+  }
+  i{
+    cursor:pointer;
+  }
+}
+
+.search-content{
   display: flex;
+  flex-direction: column;
   align-items: center;
-}
 
-.pages {
-  display: flex;
-  justify-content: space-around;
-  color: white;
-  position: fixed;
-  align-items: row;
+  .title{
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
+  }
+  #search-text{
+    width: 50vw;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
 }
-
-/* .title {
-  display: flex;
-  color: #000000;
-  position: fixed;
-  justify-content: center
-} */
-/*
-.sign_in {
-  display: flex;
-  justify-content: flex-end;
-  color: #000000;
-} */

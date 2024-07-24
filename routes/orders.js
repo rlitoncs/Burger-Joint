@@ -8,11 +8,11 @@
 
 const express = require('express');
 const router  = express.Router();
-// const urlDatabase = require('..insert db')
+const ordersQueries = require('../db/queries/orders.js');
 
 
-router.get('/orders', (req, res) => {
-  res.json(urlDatabase);
+router.get('/', (req, res) => {
+  res.render('orders');
 });
 
 
