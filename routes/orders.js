@@ -34,7 +34,7 @@ router.post('/:id', (req, res) => {
   //Formatting Time for SMS message (24 hr format -> 12 hr format)
   let formatPickUpTime = pickUpTime.slice(0,5); //e.g. 10:00:00
   let formatPickUpTimeHour = formatPickUpTime.slice(0,2);
-  if(Number(formatPickUpTimeHour) >= 12) {
+  if(Number(formatPickUpTimeHour) > 12) {
     let convertToTwelve = Number(formatPickUpTimeHour.slice(1,2)) - 2 ;
     formatPickUpTime = String(convertToTwelve) + formatPickUpTime.slice(2,5) + ' PM';
 

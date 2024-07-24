@@ -10,7 +10,7 @@ const router  = express.Router();
 const orderQueries = require('../db/queries/orderSummary');
 const sendSMS = require('../db/queries/sendSMS');
 
-const orderCart = []; //use as tempalte vars
+let orderCart = []; //use as tempalte vars
 
 // GET /orderSummary
 router.get('/', (req, res) => {
@@ -61,11 +61,23 @@ router.post('/order-submitted', (req, res) => {
     });
   }
 
-  //Customer receives message from Restaurant
-  sendSMS('Thanks for ordering at Burger Joint! Your order has been successfully submitted and received. We\'ll notify you when your order is ready! ');
+  orderCart = [] ;
+
+   //Customer receives message from Restaurant
+  const customerMsg = 'Thanks for ordering at Burger Joint! Your order has been successfully submitted and received. We\'ll notify you when your order is ready! ';
 
   //Restaurant receives message from Customer
-  sendSMS('Burger Joint: Chef you have received a new order!');
+  const restaurantMsg = 'Burger Joint: Chef you have received a new order!'
+
+  sendSMS(customerMsg)
+    .then(() => {
+      console.log('Message delivered to Customer');
+      sendSMS(restaurantMsg)
+      .then(() => {
+       console.log('Message delivered to Chef')
+      })
+    })
+
 
   res.render('orderComplete', templateVars);
 });
