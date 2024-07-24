@@ -3,4 +3,12 @@
 body,
 html {
   margin: 0;
+  font-size: 24px;
+  font-family: "Inter", sans-serif;
+
+  //footer
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }

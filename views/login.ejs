@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> 🍔 Login</title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/nav.css" />
+  <link rel="stylesheet" href="/styles/main-content.css" />
+  <link rel="stylesheet" href="/styles/menu-items.css" />
+  <!-- <link rel="stylesheet" href="/styles/main.css" /> -->
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/login.css" />
+
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/users.js"></script>
+
+</head>
+
+<body>
+    <%- include('partials/_login') %>
+      
+    <!-- Header -->
+    <section class="login">
+      <div class="login-title">
+        <h1>Login</h1>
+      </div>
+
+      <!-- Login Form -->
+      <form method="POST" action="/login">
+
+        <!-- Email -->
+        <div class="email">
+          <input class="email" name="email" placeholder="user@example.com" type="email">
+        </div>
+
+        <!-- Password -->
+        <div class="password">
+          <input class="password" name="password" placeholder="Password" type="password">
+        </div>
+
+        <!-- Login Button -->
+        <div>
+          <button class="login-btn" type="submit">Login</button>
+        </div>
+      </section>
+    </form>
+
+    <%- include('partials/_footer') %>
+</body>
+
+</html>
