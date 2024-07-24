@@ -39,16 +39,13 @@ const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 
-<<<<<<< HEAD
 const ordersRoutes = require('./routes/orders-api')
-=======
 //Routes
 const menuItemsApiRoutes = require('./routes/menu-api');
 const menuRoutes = require('./routes/menu');
 const orderSummaryRoutes = require('./routes/orderSummary');
 const loginRoutes = require('./routes/login')
 const logoutRoutes = require('./routes/logout')
->>>>>>> master
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -57,14 +54,11 @@ const logoutRoutes = require('./routes/logout')
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
-<<<<<<< HEAD
 app.use('/orders', ordersRoutes)
-=======
 
 //Routes  
 app.use('/api/menuItems', menuItemsApiRoutes) // this will show our menuItems in JSON
 app.use('/menu', menuRoutes);
->>>>>>> master
 // Note: mount other resources here, using the same pattern above
 app.use('/orderSummary', orderSummaryRoutes);
 app.use('/login', loginRoutes);
