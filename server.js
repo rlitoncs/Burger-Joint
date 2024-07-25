@@ -39,6 +39,7 @@ const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 
+const ordersRoutes = require('./routes/orders-api')
 //Routes
 const menuItemsApiRoutes = require('./routes/menu-api');
 const menuRoutes = require('./routes/menu');
@@ -53,6 +54,7 @@ const logoutRoutes = require('./routes/logout')
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
+app.use('/orders', ordersRoutes)
 
 //Routes  
 app.use('/api/menuItems', menuItemsApiRoutes) // this will show our menuItems in JSON
@@ -76,6 +78,7 @@ app.get('/', (req, res) => {
   }
   res.render('index', templateVars);
 });
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Joint - Order Summary</title>
+     
+    <link rel="stylesheet" href="/styles/order_items.css" />
+    <link rel="stylesheet" href="/styles/layout.css" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">about</a></li>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">reviews</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+            <div class="logo">
+                <img src=" " alt="Burger Joint Logo">
+            </div>
+            <div class="user">
+                <button class="user-name">Sign in as: user</button>
+            </div>
+        </nav>
+    </header>
+    <section class="order-items">
+      <div class="summary-cart">
+        <h2>Order Summary</h2>
+        <h2>cart icon</h2>
+      </div>
+
+
+      <% for (let item of orderItems) { %>
+        <article class="order-item">         
+         <img src="<%=item.image_url%>">
+          <h3>
+            $<%= item.price %>
+          </h3>
+          <h3>
+            <%= item.description %>
+          </h3>
+          <div class="quantity-control">
+            
+            <span><%=item.item_quantity%></span>
+          </div>        
+        </article>
+     <% } %>
+
+      
+      <div class="total-box">
+        <h3>
+          TOTAL :CA 
+        </h3>
+        <h3>$</h3>
+        <h3><%=totalPrice%></h3>
+      </div>
+      
+    </section>
+    
+    <footer>
+      <div class="foot">
+        <p>© Copyright 2024</p>
+        <div class="social-media">
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">Facebook</a>
+        </div>
+      </div>
+        
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
