@@ -8,4 +8,12 @@ const getCustomers = () => {
   })
 }
 
-module.exports = { getCustomers };
+// Retrieve customer id and email
+const getCustomersEmailandID = () => {
+  return db.query(`SELECT id, email from customers;`)
+    .then (data => {
+      return data.rows;
+    })
+}
+
+module.exports = { getCustomers, getCustomersEmailandID };

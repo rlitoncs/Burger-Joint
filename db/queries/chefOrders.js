@@ -15,7 +15,7 @@ const getCustomerOrders = () => {
       INNER JOIN customers ON customer_id = customers.id 
       INNER JOIN order_items ON order_id = orders.id 
       INNER JOIN menu_items ON menu_item_id = menu_items.id
-    ORDER by orders.id ASC;
+    ORDER by created_at DESC;
     `)
   .then(data => {
     return data.rows;
