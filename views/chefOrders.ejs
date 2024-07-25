@@ -39,7 +39,7 @@
     <h2 class="chef-orders-title">Orders Table</h2>
     <section class="chef-orders-table">
       <table>
-        <tr>
+        <tr id="headers">
           <th> Order ID </th>
           <th> Customer Name </th>
           <th> Total Amount </th>
@@ -54,14 +54,11 @@
             <td>$<%= row.total_amount %></td>
             <td>  
               <form method="POST" action="/chefOrders/<%= row.id %>">
-                <input type="time" id="pick_up_time" name="pick_up_time" value="<%=row.pick_up_time%>">
-                <input type="hidden" id="customer_id" name="customer_id" value="<%=row.customer_id%>">
-                <input type="hidden" id="customer_first_name" name="customer_first_name" value="<%=row.first_name%>">
-                <input type="hidden" id="customer_last_name" name="customer_last_name" value="<%=row.last_name%>">
-                <button id="pick_up_time" type="submit"> Submit </button>
+                <textarea id="pick_up_time" name="pick_up_time"> </textarea> 
+                <button id="time-btn" type="submit"> Submit </button>
               </form>
               
-            <td><%= row.created_at %></td>
+            <td class="created_at"><%= row.created_at %></td>
             
           </div>
         </tr>
