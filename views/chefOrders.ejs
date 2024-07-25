@@ -16,7 +16,7 @@
   <!-- <link rel="stylesheet" href="/styles/main.css" /> -->
   <link rel="stylesheet" href="/styles/layout.css" />
   <link rel="stylesheet" href="/styles/login.css" />
-  <link rel="stylesheet" href="/styles/orders.css" /> 
+  <link rel="stylesheet" href="/styles/chefOrders.css" /> 
 
 
   <!-- Google Font -->
@@ -35,10 +35,10 @@
 </head>
 <body>
   <%- include('partials/_login') %>
-  <main class="orders-container">
+  <main class="chef-orders-container">
     <button id="customers-btn">customers</button>
-    <h2 class="orders-title">Orders Table</h2>
-    <section class="orders-table">
+    <h2 class="chef-orders-title">Orders Table</h2>
+    <section class="chef-orders-table">
       <table>
         <tr>
           <th> Order ID </th>
@@ -49,12 +49,12 @@
         </tr>
         <% for (let row of order) { %>
         <tr>
-          <div class="order-data">
+          <div class="chef-order-data">
             <td><%= row.id %></td>
             <td><%= row.first_name %> <%= row.last_name %></td>
             <td>$<%= row.total_amount %></td>
             <td>  
-              <form method="POST" action="/orders/<%= row.id %>">
+              <form method="POST" action="/chefOrders/<%= row.id %>">
                 <input type="time" id="pick_up_time" name="pick_up_time" value="<%=row.pick_up_time%>">
                 <input type="hidden" id="customer_id" name="customer_id" value="<%=row.customer_id%>">
                 <input type="hidden" id="customer_first_name" name="customer_first_name" value="<%=row.first_name%>">

@@ -1,6 +1,6 @@
 const express = require('express');
 const router  = express.Router();
-const orderQueries = require('../db/queries/orders');
+const orderQueries = require('../db/queries/chefOrders');
 const customerQueries = require('../db/queries/customers');
 const sendSMS = require('../db/queries/sendSMS');
 
@@ -17,7 +17,7 @@ router.get('/', (req, res) => {
       user: userEmailID
     }
 
-    res.render('orders', templateVars);
+    res.render('chefOrders', templateVars);
    })
 }); 
 
@@ -44,7 +44,7 @@ router.post('/:id', (req, res) => {
 
   sendSMS(`Hello ${customerName}. Your order(#${orderID}) will be ready for pick up at ${formatPickUpTime}! `)
 
-  res.redirect('/orders'); //template vars
+  res.redirect('/chefOrders'); //template vars
 
 })
 module.exports = router;

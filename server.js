@@ -45,7 +45,7 @@ const menuRoutes = require('./routes/menu');
 const orderSummaryRoutes = require('./routes/orderSummary');
 const loginRoutes = require('./routes/login');
 const logoutRoutes = require('./routes/logout');
-const orderRoutes = require('./routes/orders');
+const chefOrderRoutes = require('./routes/chefOrders');
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -62,7 +62,7 @@ app.use('/menu', menuRoutes);
 app.use('/orderSummary', orderSummaryRoutes);
 app.use('/login', loginRoutes);
 app.use('/logout', logoutRoutes);
-app.use('/orders', orderRoutes);
+app.use('/chefOrders', chefOrderRoutes);
 
 
 // Home page
