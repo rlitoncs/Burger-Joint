@@ -10,7 +10,13 @@ const getOrders = () => {
 
 //Retrieve customer details and order details
 const getCustomerOrders = () => {
-  return db.query(`SELECT * from orders INNER JOIN customers ON customer_id = customers.id ORDER BY orders.id ASC;`)
+  return db.query(`
+    SELECT orders.id, customers.id AS customer_id, menu_items.name AS menu_name, item_quantity, first_name, last_name, total_amount, created_at FROM orders 
+      INNER JOIN customers ON customer_id = customers.id 
+      INNER JOIN order_items ON order_id = orders.id 
+      INNER JOIN menu_items ON menu_item_id = menu_items.id
+    ORDER by orders.id ASC;
+    `)
   .then(data => {
     return data.rows;
   })

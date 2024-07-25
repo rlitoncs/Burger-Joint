@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
 router.post('/:id', (req, res) => {
   const pickUpTimeMsg = req.body.pick_up_time;
   
-  //Simulate Delay
+  // Simulate Delay
   setTimeout(() => {
     sendSMS(`${pickUpTimeMsg}`);
   }, 3000)
