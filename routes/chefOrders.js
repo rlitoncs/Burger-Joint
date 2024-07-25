@@ -1,7 +1,6 @@
 const express = require('express');
 const router  = express.Router();
 const orderQueries = require('../db/queries/chefOrders');
-const customerQueries = require('../db/queries/customers');
 const sendSMS = require('../db/queries/sendSMS');
 
 // GET orders
