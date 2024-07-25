@@ -1,0 +1,56 @@
+table, th, td {
+  border:1px solid black;
+  text-align: center;
+  font-size: 20px;
+  // margin-top: 50px;
+}
+
+th, td {
+  padding: 15px 25px;
+}
+.chef-orders-title {
+  display:flex;
+  justify-content: center;
+}
+
+.chef-orders-table{
+  display:flex;
+  justify-content: center;
+}
+
+#headers {
+  background-color: #F2BEBE;
+}
+
+#pick_up_time {
+  width: 400px;
+  height: 80px;
+  display: block;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#time-btn{
+  padding: 10px;
+  border-radius: 10px;
+  border: 3px solid #50c154;
+  background-color: transparent;
+  font-size: 0.7em;
+  background-color: #50c154;
+  color: white;
+}
+
+#time-btn:hover{
+  background-color: #319834;
+  cursor: pointer;
+}
+
+.created_at {
+  width: 550px;
+}
+
+.fa-paper-plane{
+  margin-left: 5px;
+}

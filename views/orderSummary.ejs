@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Order Summary</title>
+  <title> 🛒Order Summary</title>
 
   <meta charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
@@ -42,17 +42,19 @@
         <h2 class="order-container-title">Order Summary:</h2>
         <hr>
           <% let sum=0 %>
-          <% for (let item of orderSummary) { %>
-            <% sum += Number(item.price) * Number(item.quantity) %>
-            <div class="burgers" id="<%= item.id %>">
-              <div class="burger-item">
-              <div class="i name" > <strong> <%= item.name %> </strong> </div>
-              <div class="i"> <%= item.description %> </div>
-              <div class="i"> <strong> <%= item.price %> CAD </strong> </div> 
-              <div class="i"> <strong> Quantity: <%= item.quantity %> </strong> </div> 
-              <hr>
-            </div>
-            <% } %>
+          <% if (orderSummary[customerID]) { %>
+            <% for (let item of orderSummary[customerID]) { %>
+              <% sum += Number(item.price) * Number(item.quantity) %>
+              <div class="burgers" id="<%= item.id %>">
+                <div class="burger-item">
+                <div class="i name" > <strong> <%= item.name %> </strong> </div>
+                <div class="i"> <%= item.description %> </div>
+                <div class="i"> <strong> <%= item.price %> CAD </strong> </div> 
+                <div class="i"> <strong> Quantity: <%= item.quantity %> </strong> </div> 
+                <hr>
+              </div>
+              <% } %>
+          <% } %>
           <form method="POST" action="/orderSummary/order-submitted">
             <h2 class="total-price">Total: $<%= sum.toFixed(2) %> CAD</h2>
             <button class="place-order-btn" type="submit"> Place Order </button>

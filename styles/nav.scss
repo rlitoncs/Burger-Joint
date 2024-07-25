@@ -19,7 +19,7 @@ a{
 .nav-content {
   @include align-nav();
 
-  #about, #menu, #reviews, #contact{
+  #about, #menu, #reviews, #contact, #customers, #orders, #fulfilled{
     padding: 0 1.5em; /* top-bottom, left-right*/
   }
 

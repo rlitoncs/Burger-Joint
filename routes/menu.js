@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
   const userEmailID = req.session.user_email_id;
   menuQueries.getMenuItems()
     .then(burgerItems => {
-      templateVars = {
+      const templateVars = {
         burgers: burgerItems,
         user: userEmailID
       }

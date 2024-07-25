@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title> 📦 Orders </title>
+
+  <meta charset="UTF-8" >
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" />
+  <link rel="stylesheet" href="/styles/nav.css" />
+  <link rel="stylesheet" href="/styles/main-content.css" />
+  <link rel="stylesheet" href="/styles/menu-items.css" />
+  <!-- <link rel="stylesheet" href="/styles/main.css" /> -->
+  <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/login.css" />
+  <link rel="stylesheet" href="/styles/chefOrders.css" /> 
+
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <script src="/vendor/jquery-3.0.0.js"></script>
+  <script defer src="/scripts/users.js"></script>
+  <script src="/scripts/chefOrders.js"></script>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
+
+</head>
+<body>
+  <%- include('partials/_chefOrders') %>
+  <main class="chef-orders-container">
+    <h2 class="chef-orders-title">Orders Table</h2>
+    <section class="chef-orders-table">
+      <table>
+        <tr id="headers">
+          <th> Order ID </th>
+          <th> Menu Name </th>
+          <th> Quantity </th>
+          <th> Customer Name </th>
+          <th> Total Amount </th>
+          <th> Pick Up Time </th>
+          <th> Created at </th>
+        </tr>
+        <% for (let row of order) { %>
+        <tr>
+          <div class="chef-order-data">
+            <td><%= row.id %></td>
+            <td><%= row.menu_name %> </td>
+            <td><%= row.item_quantity %></td>
+            <td><%= row.first_name %> <%= row.last_name %></td>
+            <td>$<%= row.total_amount %></td>
+            <td>  
+              <form id="msg-box-orders" class="msg-box-orders" method="POST" action="/chefOrders/<%= row.id %>">
+                <div class="msg-container-<%=new Date(row.created_at).toISOString().split('T')[0]%>-<%=row.customer_id%>">
+                  <textarea id="pick_up_time" name="pick_up_time" placeholder="Send message to customer"> </textarea> 
+                  <button id="time-btn" class="time-btn" type="submit"> Send Message 
+                  <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                </div>
+              </form>
+              
+            <td class="created_at"><%= row.created_at %></td>
+            
+          </div>
+        </tr>
+      <% } %>
+      </table>
+    </section>
+  </main>
+
+</body>
+</html>

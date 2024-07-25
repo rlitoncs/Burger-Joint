@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Order Complete ✔️</title>
+  <title> 🧑🏻 Customers </title>
 
   <meta charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
@@ -13,9 +13,11 @@
   <link rel="stylesheet" href="/styles/nav.css" />
   <link rel="stylesheet" href="/styles/main-content.css" />
   <link rel="stylesheet" href="/styles/menu-items.css" />
-  <link rel="stylesheet" href="/styles/order-summary.css" />
   <!-- <link rel="stylesheet" href="/styles/main.css" /> -->
   <link rel="stylesheet" href="/styles/layout.css" />
+  <link rel="stylesheet" href="/styles/login.css" />
+  <link rel="stylesheet" href="/styles/chefOrders.css" /> 
+
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,20 +33,33 @@
   <script defer src="/scripts/users.js"></script>
 
 </head>
-
 <body>
-    <%- include('partials/_header') %>
+  <%- include('partials/_chefOrders') %>
+  <main class="chef-orders-container">
+    <h2 class="chef-orders-title">Customers Table</h2>
+    <section class="chef-orders-table">
+      <table>
+        <tr id="headers">
+          <th> Customer ID </th>
+          <th> First Name </th>
+          <th> Last Name </th>
+          <th> Phone Number </th>
+          <th> Email </th>
+        </tr>
+        <% for (let row of customers) { %>
+        <tr>
+          <div class="chef-order-data">
+            <td><%= row.id %></td>
+            <td><%= row.first_name %></td>
+            <td><%= row.last_name %></td>
+            <td><%= row.phone_number %></td>
+            <td><%= row.email %></td>
+          </div>
+        </tr>
+      <% } %>
+      </table>
+    </section>
+  </main>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <!-- Menu Items  -->
-      <section id="order-container">
-       <h2>Order is Completed</h2>
-      </section>
-
-    </main>
-    
-    <%- include('partials/_footer') %>
 </body>
-
 </html>
