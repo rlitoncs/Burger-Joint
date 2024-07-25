@@ -10,13 +10,12 @@ router.get('/', (req, res) => {
 
   orderQueries.getCustomerOrders()
    .then(orders => {
-    // console.log(orders);
-    const templateVars = {
-      order: orders,
-      user: userEmailID
-    }
+      const templateVars = {
+        order: orders,
+        user: userEmailID
+      }
 
-    res.render('chefOrders', templateVars);
+      res.render('chefOrders', templateVars);
    })
 }); 
 
