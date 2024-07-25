@@ -31,6 +31,8 @@
 
   <script src="/vendor/jquery-3.0.0.js"></script>
   <script defer src="/scripts/users.js"></script>
+  <script src="/scripts/chefOrders.js"></script>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script>
 
 </head>
 <body>
@@ -53,9 +55,13 @@
             <td><%= row.first_name %> <%= row.last_name %></td>
             <td>$<%= row.total_amount %></td>
             <td>  
-              <form method="POST" action="/chefOrders/<%= row.id %>">
-                <textarea id="pick_up_time" name="pick_up_time"> </textarea> 
-                <button id="time-btn" type="submit"> Send Message </button>
+              <form id="msg-box-orders" class="msg-box-orders" method="POST" action="/chefOrders/<%= row.id %>">
+                <div class="msg-container-<%=row.id%>">
+                  <textarea id="pick_up_time" name="pick_up_time" placeholder="Send message to customer"> </textarea> 
+                  <button id="time-btn" class="time-btn" type="submit"> Send Message 
+                  <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                </div>
               </form>
               
             <td class="created_at"><%= row.created_at %></td>

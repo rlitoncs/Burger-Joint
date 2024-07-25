@@ -56,7 +56,7 @@ const customerRoutes = require('./routes/customersDB');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
-app.use('/orders', ordersRoutes)
+app.use('/orders-api', ordersRoutes)
 
 //Routes  
 app.use('/api/menuItems', menuItemsApiRoutes); // this will show our menuItems in JSON

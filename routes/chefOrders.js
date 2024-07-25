@@ -22,8 +22,11 @@ router.get('/', (req, res) => {
 // POST orders
 router.post('/:id', (req, res) => {
   const pickUpTimeMsg = req.body.pick_up_time;
-
-  sendSMS(`${pickUpTimeMsg}`);
+  
+  //Simulate Delay
+  setTimeout(() => {
+    sendSMS(`${pickUpTimeMsg}`);
+  }, 3000)
 
   res.redirect('/chefOrders'); //template vars
 
