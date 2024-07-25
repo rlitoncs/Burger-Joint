@@ -43,6 +43,8 @@
       <table>
         <tr id="headers">
           <th> Order ID </th>
+          <th> Menu Name </th>
+          <th> Quantity </th>
           <th> Customer Name </th>
           <th> Total Amount </th>
           <th> Pick Up Time </th>
@@ -52,11 +54,13 @@
         <tr>
           <div class="chef-order-data">
             <td><%= row.id %></td>
+            <td><%= row.menu_name %> </td>
+            <td><%= row.item_quantity %></td>
             <td><%= row.first_name %> <%= row.last_name %></td>
             <td>$<%= row.total_amount %></td>
             <td>  
               <form id="msg-box-orders" class="msg-box-orders" method="POST" action="/chefOrders/<%= row.id %>">
-                <div class="msg-container-<%=row.id%>">
+                <div class="msg-container-<%=row.customer_id%>">
                   <textarea id="pick_up_time" name="pick_up_time" placeholder="Send message to customer"> </textarea> 
                   <button id="time-btn" class="time-btn" type="submit"> Send Message 
                   <i class="fa-solid fa-paper-plane"></i>
