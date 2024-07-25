@@ -93,14 +93,14 @@ router.post('/order-submitted', (req, res) => {
   //Restaurant receives message from Customer
   const restaurantMsg = 'Burger Joint: Chef you have received a new order!'
 
-  // sendSMS(customerMsg)
-  //   .then(() => {
-  //     console.log('Message delivered to Customer');
-  //     sendSMS(restaurantMsg)
-  //     .then(() => {
-  //      console.log('Message delivered to Chef')
-  //     })
-  //   })
+  sendSMS(customerMsg)
+    .then(() => {
+      console.log('Message delivered to Customer');
+      sendSMS(restaurantMsg)
+      .then(() => {
+       console.log('Message delivered to Chef')
+      })
+    })
 
 
   res.render('orderComplete', templateVars);
