@@ -51,7 +51,7 @@ router.post('/order-submitted', (req, res) => {
 
   //Add new order to orders table
   for (let item of orderCart) {
-    orderQueries.addOrder('now()', Number(item.price) * Number(item.quantity), '12:30:00', 'Your order has been placed', 'Order Received', true, customerID);
+    orderQueries.addOrder('NOW()', Number(item.price) * Number(item.quantity), '12:30:00', 'Your order has been placed', 'Order Received', true, customerID);
 
     //Add new order to order_items table
     orderQueries.getSpecificOrder(customerID)
