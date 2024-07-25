@@ -63,7 +63,11 @@ router.post('/', (req, res) => {
 router.post('/order-submitted', (req, res) => {
   const userEmailID = req.session.user_email_id;;
   const customerID = req.session.user_id;
-  console.log(customerID);
+
+  // Need to be logged in to purchase items
+  if (!customerID){
+    return res.redirect('/login');
+  }
 
   const templateVars = {
     user: userEmailID
