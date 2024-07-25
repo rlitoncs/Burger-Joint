@@ -8,7 +8,7 @@
 const express = require('express');
 const router  = express.Router();
 const orderQueries = require('../db/queries/orderSummary');
-//const sendSMS = require('../db/queries/sendSMS');
+const sendSMS = require('../db/queries/sendSMS');
 
 let orderCart = []; //use as tempalte vars
 
