@@ -46,7 +46,7 @@
           <th> Menu Name </th>
           <th> Quantity </th>
           <th> Customer Name </th>
-          <th> Total Amount </th>
+          <th> Price </th>
           <th> Pick Up Time </th>
           <th> Created at </th>
         </tr>
@@ -57,7 +57,7 @@
             <td><%= row.menu_name %> </td>
             <td><%= row.item_quantity %></td>
             <td><%= row.first_name %> <%= row.last_name %></td>
-            <td>$<%= row.total_amount %></td>
+            <td>$<%=row.price%> (<%= row.item_quantity%>) = $<%= (row.price*row.item_quantity).toFixed(2) %></td>
             <td>  
               <form id="msg-box-orders" class="msg-box-orders" method="POST" action="/chefOrders/<%= row.id %>">
                 <div class="msg-container-<%=new Date(row.created_at).toISOString().split('T')[0]%>-<%=row.customer_id%>">

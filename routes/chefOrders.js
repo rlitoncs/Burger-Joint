@@ -10,6 +10,7 @@ router.get('/', (req, res) => {
 
   orderQueries.getCustomerOrders()
    .then(orders => {
+    console.log(orders);
       const templateVars = {
         order: orders,
         user: userEmailID
