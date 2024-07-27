@@ -60,7 +60,7 @@
             <td>$<%=row.price%> (<%= row.item_quantity%>) = $<%= (row.price*row.item_quantity).toFixed(2) %></td>
             <td>  
               <form id="msg-box-orders" class="msg-box-orders" method="POST" action="/chefOrders/<%= row.id %>">
-                <div class="msg-container-<%=new Date(row.created_at).toISOString().split('T')[0]%>-<%=row.customer_id%>">
+                <div class="msg-container-<%=row.customer_id%>">
                   <textarea id="pick_up_time" name="pick_up_time" placeholder="Send message to customer"> </textarea> 
                   <button id="time-btn" class="time-btn" type="submit"> Send Message 
                   <i class="fa-solid fa-paper-plane"></i>
