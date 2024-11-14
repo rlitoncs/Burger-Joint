@@ -17,16 +17,17 @@ Burger Joint is a multi-page web application developed with Node.js, Express, Po
 8. Visit `http://localhost:8080/`
 
 ### Home Page
-!["View of Home Page"]()
+!["View of Home Page"](https://github.com/rlitoncs/Burger-Joint/blob/master/docs/Home-Page.JPG?raw=true)
 
 ### Menu Page
-!["View of Menu Page"]()
+!["View of Menu Page"](https://github.com/rlitoncs/Burger-Joint/blob/master/docs/Menu-Page.JPG?raw=true)
 
 ### Order Summary Page
-!["View of Order Summary Page"]()
+!["View of Order Summary Page"](https://github.com/rlitoncs/Burger-Joint/blob/master/docs/Order-Page.JPG?raw=true)
 
 ### Restaurant Incoming Orders Page
-!["View of Restaurant Side Page"]()
+!["View of Restaurant Side Page"](https://github.com/rlitoncs/Burger-Joint/blob/master/docs/Restaurant-Side-Orders-Page.JPG?raw=true)
+!["View of Message Sent"](https://github.com/rlitoncs/Burger-Joint/blob/master/docs/Message-Sent.JPG?raw=true)
 
 ### Message Received
-!["View of Customer and Restaurant Messages"]()
+!["View of Customer and Restaurant Messages"](https://github.com/rlitoncs/Burger-Joint/blob/master/docs/Message-Received.jpg?raw=true)
